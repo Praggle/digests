@@ -2,7 +2,7 @@
 /**
 *
 * @package phpBB Extension - Digests
-* @copyright (c) 2016 Mark D. Hamill (mark@phpbbservices.com)
+* @copyright (c) 2017 Mark D. Hamill (mark@phpbbservices.com)
 * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
 *
 */
@@ -94,7 +94,7 @@ $lang = array_merge($lang, array(
 	'DIGESTS_POSTS_TYPE_ANY'			=> 'Alle Beiträge',
 	'DIGESTS_POSTS_TYPE_FIRST'			=> 'Nur den ersten Beitrag eines Themas anzeigen',
 	'DIGESTS_POWERED_BY'				=> 'phpbbservices.com',
-	'DIGESTS_POWERED_BY_TEXT'			=> 'Digests extension für phpBB 3.1 von',
+	'DIGESTS_POWERED_BY_TEXT'			=> 'Digests extension für phpBB von',
 	'DIGESTS_PRIVATE_MESSAGES_IN_DIGEST'	=> 'Meine ungelesenen Privaten Nachrichten mit anzeigen',
 	'DIGESTS_PUBLISH_DATE'				=> 'Persönliche Zusammenfassung für %s vom %s',
 	'DIGESTS_REGISTER'					=> 'Emfange regelmäßig eMail-Zusammenstellungen',
@@ -128,20 +128,16 @@ $lang = array_merge($lang, array(
 	'DIGESTS_SORT_USER_ORDER'			=> 'Standardeinstellung des Boards verwenden',
 	'DIGESTS_SUBJECT_TITLE'				=> '%s - %s',
 	'DIGESTS_TITLE'						=> 'Zusammenfassung',
+	'DIGESTS_TRANSLATED_BY'				=> 'translated by',
+	'DIGESTS_TRANSLATOR_NAME'			=> 'Praggle',	// Leave null string to suppress translator name
+	'DIGESTS_TRANSLATOR_CONTACT'		=> 'http://github.com/Praggle/digests',	// Leave null string to suppress contact info, if used use: mailto:name@emailaddress.com or a URL if you have a website.
 	'DIGESTS_TOC'						=> 'Inhaltsverzeichnis',
 	'DIGESTS_TOC_EXPLAIN'				=> 'Wenn das Board sehr aktiv ist, kann es sinnvoll sein, ein Inhaltsverzeichnis in die zusammenfassung zu integrieren. In HTML-Zusammenfassungen enthält das Inhaltsverzeichnis anklickbare Links zum entsprechenden Beitrag oder zur privaten Nachricht innerhalb der Zusammenfassung.',
 	'DIGESTS_UNKNOWN'					=> 'Unbekannt',
 	'DIGESTS_UNREAD'					=> 'Ungelesen',
 	'DIGESTS_UPDATED'					=> 'Einstellung gespeichert',
 	'DIGESTS_USE_BOOKMARKS'				=> 'Nur Lesezeichenthemen',
-	'DIGESTS_WEEKDAY' => array(
-		0	=> 'Sonntag',
-		1 	=> 'Montag',
-		2	=> 'Dienstag',
-		3	=> 'Mittwoch',
-		4	=> 'Donnerstag',
-		5	=> 'Freitag',
-		6	=> 'Samstag'),
+	'DIGESTS_WEEKDAY' 					=> 'Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday',
 	'DIGESTS_WEEKLY'					=> 'Wöchentliche Zusammenfassung',
 	'DIGESTS_YOU_HAVE_PRIVATE_MESSAGES' => '%s hat Private Nachrichten erhalten',
 	'DIGESTS_YOUR_DIGEST_OPTIONS' 		=> '%s\'s persönliche Einstellungen:',
