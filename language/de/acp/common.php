@@ -2,7 +2,7 @@
 /**
 *
 * @package phpBB Extension - Digests
-* @copyright (c) 2016 Mark D. Hamill (mark@phpbbservices.com)
+* @copyright (c) 2017 Mark D. Hamill (mark@phpbbservices.com)
 * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
 *
 */
@@ -28,7 +28,7 @@ $lang = array_merge($lang, array(
 	'DIGESTS_ALL_SUBSCRIBED'								=> 'Es wurden Abonnements für %s Nutzer erstellt',
 	'DIGESTS_ALL_UNSUBSCRIBED'								=> 'Die Abonnements von insgesamt %s Nutzern wurden gelöscht',
 	'DIGESTS_BALANCE_LOAD'									=> 'Last-Verteilung',
-	'DIGESTS_BASED_ON'										=> '(UTC [+] %s)',
+	'DIGESTS_BASED_ON'										=> '(UTC%+d)',
 	'DIGESTS_CURRENT_VERSION_INFO'							=> 'Aktuelle Version: <strong>%s</strong>',
 	'DIGESTS_CUSTOM_STYLESHEET_PATH'						=> 'Pfad zum Custom-Stylesheet',
 	'DIGESTS_CUSTOM_STYLESHEET_PATH_EXPLAIN'				=> 'Dieser Pfadangabe ist nur von Bedeutung, wenn weiter oben auch die Verwendung des Costum-Sylesheet aktiviert ist. Das Stylesheet wird dann für alle HTML-Zusammenfassungen verwendet. Es muss der relative Pfad zum phpBB-styles-Verzeichnis angegeben werden. Es ist sinnvoll, dafür ein eigenes Unterverzeichnis innerhalb des Themes anzulegen. Anmerkung: Es fällt in deinen eigenen Zuständigkeitsbereich, selbst ein solches Stylesheet zu entwickeln und es unter dem hier angegebenen Pfad und Namen auf den Server zu hinterlegen. Beispiel: prosilver/theme/digest_stylesheet.css. Informationen zum Erstellen von Stylesheets findest du <a href="http://www.w3schools.com/css/">hier</a>.',
@@ -51,7 +51,7 @@ $lang = array_merge($lang, array(
 	'DIGESTS_FROM_EMAIL_NAME'								=> 'Absendername',
 	'DIGESTS_FROM_EMAIL_NAME_EXPLAIN'						=> 'Hier kann der Name festgelegt werden, der beim Empfänger als Absender der eMail-Zusammenfassungen angezeigt werden soll. Wenn das Feld frei gelassen wird, identifiziert der Mailer sich als Mail-Robot.',
 	'DIGESTS_HAS_UNSUBSCRIBED'								=> 'Abonnement eigenhändig beendet',
-	'DIGESTS_HOUR_SENT'										=> 'Sendeuhrzeit (UTC [+] %s)',
+	'DIGESTS_HOUR_SENT'										=> 'Sendeuhrzeit (UTC%+d)',
 	'DIGESTS_IGNORE'										=> 'Keine globale Änderung vornehmen',
 	'DIGESTS_ILLOGICAL_DATE'								=> 'Dein Simulationsdatum ist unlogisch (z.B. 31. Februar). Bitte korrigieren und erneut absenden.',
 	'DIGESTS_INCLUDE_ADMINS'								=> 'Schließe Administratoren mit ein',
