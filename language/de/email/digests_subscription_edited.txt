@@ -1,9 +1,9 @@
-Hallo {USERNAME},
+Hallo {{ USERNAME }},
 
-ein Administrator von {FORUM_NAME} hat deine Zusammenfassungseinstellungen bearbeitet. Um deine aktuellen Einstellungen anzusehen, kannst folgenden Link nehmen:
+ein Administrator von {{ FORUM_NAME }} hat deine Zusammenfassungseinstellungen bearbeitet. Um deine aktuellen Einstellungen anzusehen, kannst folgenden Link nehmen:
 
-{DIGESTS_UCP_LINK}
+{{ DIGESTS_UCP_LINK }}
 
 Herzlichen Gruß,
 
-Das Administrationsteam von {FORUM_NAME}
+Das Administrationsteam von {{ FORUM_NAME }}
