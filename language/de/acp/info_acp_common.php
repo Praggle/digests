@@ -2,7 +2,7 @@
 /**
 *
 * @package phpBB Extension - Digests
-* @copyright (c) 2017 Mark D. Hamill (mark@phpbbservices.com)
+* @copyright (c) 2018 Mark D. Hamill (mark@phpbbservices.com)
 * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
 *
 */
@@ -22,8 +22,6 @@ global $phpbb_container;
 $config = $phpbb_container->get('config');
 $helper = $phpbb_container->get('phpbbservices.digests.common');
 
-$server_settings_url = append_sid('index.php?i=acp_board&amp;mode=server');
-
 $lang = array_merge($lang, array(
 
 	'PLURAL_RULE'											=> 1,
@@ -31,7 +29,7 @@ $lang = array_merge($lang, array(
 	'ACP_CAT_DIGESTS'										=> 'eMail-Zusammenfassungen',
 	'ACP_DIGESTS_SETTINGS'									=> 'Konfiguration',
 	'ACP_DIGESTS_GENERAL_SETTINGS'							=> 'Allgemeine Konfiguration',
-	'ACP_DIGESTS_GENERAL_SETTINGS_EXPLAIN'					=> 'Hier können allgemeine Grundeinstellungen vorgenommen werden. Für einen stundengenauen Versand der eMails muss die <a href="https://wiki.phpbb.com/Modular_cron#Use_system_cron">an dieser Stelle</a> beschriebene Konfiguration vorgenommen werden und <a href="'. $server_settings_url . '"><strong>&rsquo;Wiederkehrende Aufgaben über Cron-Job des Systems ausführen&rsquo;</strong></a> in der Board-Konfiguration aktiviert werden. Andernfalls werden die Zusammenfassungen der aktuellen und der vorhergehenden Stunden versandt, sobald es wieder Nutzer-Aktivitäten im Board gibt. Weitere Informationen darüber kann man den Digests-Extension-FAQ im Forum von phpbb.com entnehmen.',
+	'ACP_DIGESTS_GENERAL_SETTINGS_EXPLAIN'					=> 'Hier können allgemeine Grundeinstellungen vorgenommen werden. Für einen stundengenauen Versand der eMails muss der phpBB-interne <strong><a href="https://wiki.phpbb.com/Modular_cron#Use_system_cron">System Cron Dienst</a></strong> eingerichtet und aktiviert werden. Andernfalls werden die Zusammenfassungen der aktuellen und der vorhergehenden Stunden versandt, sobald es wieder Nutzer-Aktivitäten im Board gibt. Weitere Informationen darüber kann man den Digests-Extension-FAQ im Forum von phpbb.com entnehmen.',
 	'ACP_DIGESTS_USER_DEFAULT_SETTINGS'						=> 'Standard-Nutzerkonfiguration',
 	'ACP_DIGESTS_USER_DEFAULT_SETTINGS_EXPLAIN'				=> 'Hier können Administratoren Standardwerte vorgeben, die zunächst in der individuellen Nutzerkonfiguration vorausgewählt werden sollen.',
 	'ACP_DIGESTS_EDIT_SUBSCRIBERS'							=> 'Abonnements verwalten',
@@ -44,7 +42,7 @@ $lang = array_merge($lang, array(
 	'ACP_DIGESTS_RESET_CRON_RUN_TIME'						=> 'Mailer zurücksetzen',
 	'ACP_DIGESTS_RESET_CRON_RUN_TIME_EXPLAIN'				=> '',
 	'ACP_DIGESTS_TEST'										=> 'Manueller Test-Versand',
-	'ACP_DIGESTS_TEST_EXPLAIN'								=> 'Diese Funktion ermöglicht den manuellen eMail-Versand zur Überprüfung der Grundeinstellungen oder zur Fehlersuche. Man kann mit dieser Funktion auch die abonnierten Zusammenfassungen für eine bestimmten Zeitpunkt (nochmal) versenden. Die Zeitzone des Boards (UTC [+] ' . $helper->make_tz_offset($config['board_timezone']) . ') wird dabei für die Berechnung des Datums und der Stunde verwendet. Bitte beachte, dass der Versand der Zusammenfassungen erst dadurch Nutzer-Aktivitäten im Board angestoßen werden können. Das bedeutet, dass die Zusammenfassungen etwas später als geplant gesendet werden. Für stundengenauen eMail-Versand muss sonst ein <a href="https://wiki.phpbb.com/Modular_cron#Use_system_cron">System-Cronjob</a> eingerichtet werden muss und in der <a href="'. $server_settings_url . '">Serverkonfiguration des Boards</a> unter <strong>&rsquo;Wiederkehrende Aufgaben über Cron-Job des Systems ausführen&rsquo;</strong> aktiviert werden muss. Weitere Informationen stehen in den FAQ zu dieser Extension im Forum von phpbb.com.',
+	'ACP_DIGESTS_TEST_EXPLAIN'								=> 'Diese Funktion ermöglicht den manuellen eMail-Versand zur Überprüfung der Grundeinstellungen oder zur Fehlersuche. Man kann mit dieser Funktion auch die abonnierten Zusammenfassungen für eine bestimmten Zeitpunkt (nochmal) versenden. Die Zeitzone des Boards (UTC [+] ' . $helper->make_tz_offset($config['board_timezone']) . ') wird dabei für die Berechnung des Datums und der Stunde verwendet. Bitte beachte, dass der Versand der Zusammenfassungen erst dadurch Nutzer-Aktivitäten im Board angestoßen werden können. Das bedeutet, dass die Zusammenfassungen etwas später als geplant gesendet werden. Für stundengenauen eMail-Versand muss sonst ein <a href="https://wiki.phpbb.com/Modular_cron#Use_system_cron">System-Cronjob</a> eingerichtet und aktiviert werden. Weitere Informationen stehen in den FAQ zu dieser Extension im Forum von phpbb.com.',
 
 	'LOG_CONFIG_DIGESTS_BAD_DIGEST_TYPE'					=> '<strong>Hinweis: Abonnent %1$s hat als Zusammenfassungsart %2$s eingestellt. Sinnvoller wäre jedoch die &rsquo;Tägliche Zusammenfassung&rsquo;.</strong>',
 	'LOG_CONFIG_DIGESTS_BAD_SEND_HOUR'						=> '<strong>Die Sendeuhrzeit von %1$s ist ungültig. Sie lautet %1$d. Der Wert muss immer >= 0 und < 24 sein.</strong>',

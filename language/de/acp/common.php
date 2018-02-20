@@ -2,7 +2,7 @@
 /**
 *
 * @package phpBB Extension - Digests
-* @copyright (c) 2017 Mark D. Hamill (mark@phpbbservices.com)
+* @copyright (c) 2018 Mark D. Hamill (mark@phpbbservices.com)
 * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
 *
 */
@@ -111,7 +111,6 @@ $lang = array_merge($lang, array(
 																	1 => 'Während der Lastumverteilung hat gerade %d Abonnent selbst eine Änderung des Sendezeitpunktes vergenommen.',
 																	2 => 'Während der Lastumverteilung haben gerade %d Abonnenten selbst eine Änderung des Sendezeitpunktes vergenommen.',
 															),
-	'DIGESTS_REFRESH'										=> 'Aktualisieren',
 	'DIGESTS_REGISTRATION_FIELD'							=> 'Neuen Nutzern während der Registrierung ermöglichen, eine eMail-Zusammenfassung zu abonnieren.',
 	'DIGESTS_REGISTRATION_FIELD_EXPLAIN'					=> 'Wenn diese Option aktiviert ist, können Nutzer schon bei Ausfüllen des Registrierungsformulares auswählen, ob sie die eMail-Zusammenfassung mit den Standardvorgaben abonnieren möchten. Diese Auswahlmöglichkeit erscheint dort nicht, wenn das &rsquo;Automatische Abonnieren&rsquo; aktiviert ist.',
 	'DIGESTS_REPLY_TO_EMAIL_ADDRESS'						=> 'Antwortemailadresse',
@@ -121,7 +120,7 @@ $lang = array_merge($lang, array(
 	'DIGESTS_RUN_TEST'										=> 'Mailer starten',
 	'DIGESTS_RUN_TEST_CLEAR_SPOOL'							=> 'store/ext/phpbbservices/digests-Ordner leeren',
 	'DIGESTS_RUN_TEST_CLEAR_SPOOL_ERROR'					=> 'Es konnten nicht alle Dateien aus dem store/ext/phpbbservices/digests-Ordner entfernt werden. Ursache könnten fehlende Datei-Rechte oder ein gelöschter Ordner sein. Alle Dateien sollten &rsquo;publicly writeable&rsquo; sein (777 auf Unix-basierten Systemen).',
-	'DIGESTS_RUN_TEST_CLEAR_SPOOL_EXPLAIN'					=> '&rsquo;Ja&rsquo; bedeutet, dass alle Dateien im store/ext/phpbbservices/digests-Ordner gelöscht werden. Diese Einstellung ist sinnvoll, um auszuschließen, dass noch auf alte Zusammenfassungen zugegriffen werden kann, während bereits neue Zusammenfassungen in diesem Ordner abgelegt werden.',
+	'DIGESTS_RUN_TEST_CLEAR_SPOOL_EXPLAIN'					=> '&rsquo;Ja&rsquo; bedeutet, dass alle Dateien im store/ext/phpbbservices/digests-Ordner gelöscht werden. Diese Einstellung ist sinnvoll, um auszuschließen, dass noch auf alte Zusammenfassungen zugegriffen werden kann, während bereits neue Zusammenfassungen in diesem Ordner abgelegt werden. Diese Auswahl sollte auch nach dem Abschluss eines Fehlersuchprozesses möglichst wieder eingestellt werden, da der Inhalt dieses Ordnes öffentlich zugänglich ist. Das Löschen erfolgt jeweils vor dem Erstellen einer neuen Zusammenfassung. Mit dieser Funktion können aber auch sonst jederzeit alte Inhalte des Ordners gelöscht werden. Sie funktioniert nämlich auch unabhängig vom Starten des Mailers, jeweils beim Absenden dieses Formulares.',
 	'DIGESTS_RUN_TEST_DAY'									=> 'Simulierter Kalendertag',
 	'DIGESTS_RUN_TEST_DAY_EXPLAIN'							=> 'Ganze Zahl zwischen 1 und 31. Wenn Jahr, Monat und Kalendertag in der Zukunft liegen, wird natürlich keine Zusammenfassung erzeugt. Unlogische Eingaben, wie z.B. &rsquo;31. Februar&rsquo; werden nicht akzeptiert.',
 	'DIGESTS_RUN_TEST_EMAIL_ADDRESS'						=> 'Test-Emailadresse',
@@ -140,7 +139,7 @@ $lang = array_merge($lang, array(
 	'DIGESTS_RUN_TEST_YEAR'									=> 'Simuliertes Jahr',
 	'DIGESTS_RUN_TEST_YEAR_EXPLAIN'							=> 'Es sind nur Jahre zwischen 2000 und 2030 erlaubt. Es wird empfohlen das aktuelle Jahr zu nehmen. Liegt das Jahr in der Zukunft, so werden natürlich keine Zusammenfassungen erzeugt.',
 	'DIGESTS_SEARCH_FOR_MEMBER'								=> 'Teilnehmer suchen',
-	'DIGESTS_SEARCH_FOR_MEMBER_EXPLAIN'						=> 'Man kann hier den vollständigen Nutzernamen oder auch nur einen Teil davon eingeben. Anschließend auf &rsquo;Aktualisieren&rsquo; klicken. Um alle Nutzer zu sehen, das Feld leer lassen. Die Suche ist &rsquo;nicht case sensitive&rsquo;.',
+	'DIGESTS_SEARCH_FOR_MEMBER_EXPLAIN'						=> 'Man kann hier den vollständigen Nutzernamen oder auch nur einen Teil davon eingeben. Anschließend mit Return oder Enter quittieren. Um alle Nutzer zu sehen, das Feld leer lassen. Die Suche ist &rsquo;nicht case sensitive&rsquo;.',
 	'DIGESTS_SELECT_FORUMS_ADMIN_EXPLAIN'					=> 'In der Auswahlliste tauchen nur die Themenbereiche auf, für die der Nutzer auch eine Leseberechtigung hat. Wenn Bedarf besteht, dem Nutzer auch Beiträge aus hier nicht mit aufgeführten Themenbereichen zukommen zu lassen, muss dafür eine entsprechende Änderung in den Benutzer- oder Gruppenrechten vorgenommen werden.',
 	'DIGESTS_SHOW'											=> 'Anzeigen',
 	'DIGESTS_SHOW_EMAIL'									=> 'Emailadresse im Log anzeigen',
