@@ -42,13 +42,13 @@ GitHub: https://github.com/MarkDHamill/digests
 
 Wenn nach der Installation dieser Extension deutsche Sprache hinzugefügt werden soll, muss folgendermaßen vorgegangen werden:
 
-1. Die passende Version in 'branches' heraussuchen (z.B. 3.2.6-DE) 
+1. Die passende Version in 'branches' heraussuchen (z.B. 3.2.6-DE für Digests 3.2.6) 
 
 2. Auf "Clone or Download" klicken und "Download as ZIP" auswählen
 
 3. Nach dem Herunterladen ZIP-Datei mit entsprechender Software in einen temporären Ordner entpacken.
 
-4. In diesem temporären Ordner navigiert man nach digests\language\. Dort befindet sich das Verzeichnis "de". 
+4. In diesem temporären Ordner navigiert man nach digests-xxx\language\. Dort befindet sich das Verzeichnis "de". 
 Dieser Ordner muss komplett in die phpBB-Installation auf eurem Web-Server in folgendes Verzeichnis kopiert werden: 
 ext/phpbbservices/digests/language. Dort gibt es bereits den Ordner "en"; kopiere "de" ebenfalls dorthin.
 
