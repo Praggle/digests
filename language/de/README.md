@@ -34,7 +34,7 @@ Deutsche Übersetzung für phpBBDigests
 
 
 Digests ist eine Extension für phpBB 3.2. Basierend auf persönlichen Vorgaben und Filtereinstellungen sendet die 
-Extension tägliche, wöchentliche oder monatliche eMail-Zusammenfassungen an alle dafür angemeldeten Nutzer. 
+Extension tägliche, wöchentliche oder monatliche E-Mail-Zusammenfassungen an alle dafür angemeldeten Nutzer. 
 
 Homepage: https://www.phpbbservices.com/digests_wp/
 
