@@ -1,6 +1,6 @@
 <?php
 /**
-* 
+*
 * @package phpBB Extension - Digests
 * @copyright (c) 2018 Mark D. Hamill (mark@phpbbservices.com)
 * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
