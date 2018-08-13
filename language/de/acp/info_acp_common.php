@@ -19,9 +19,6 @@ if (empty($lang) || !is_array($lang))
 
 global $phpbb_container;
  
-$config = $phpbb_container->get('config');
-$helper = $phpbb_container->get('phpbbservices.digests.common');
-
 $lang = array_merge($lang, array(
 
 	'PLURAL_RULE'											=> 1,
@@ -42,7 +39,7 @@ $lang = array_merge($lang, array(
 	'ACP_DIGESTS_RESET_CRON_RUN_TIME'						=> 'Mailer zurücksetzen',
 	'ACP_DIGESTS_RESET_CRON_RUN_TIME_EXPLAIN'				=> '',
 	'ACP_DIGESTS_TEST'										=> 'Manueller Test-Versand',
-	'ACP_DIGESTS_TEST_EXPLAIN'								=> 'Diese Funktion ermöglicht den manuellen E-Mail-Versand zur Überprüfung der Grundeinstellungen oder zur Fehlersuche. Man kann mit dieser Funktion auch die abonnierten Zusammenfassungen für eine bestimmten Zeitpunkt (nochmal) versenden. Die Zeitzone des Boards (UTC [+] ' . $helper->make_tz_offset($config['board_timezone']) . ') wird dabei für die Berechnung des Datums und der Stunde verwendet. Bitte beachte, dass der Versand der Zusammenfassungen erst dadurch Nutzer-Aktivitäten im Board angestoßen werden können. Das bedeutet, dass die Zusammenfassungen etwas später als geplant gesendet werden. Für stundengenauen E-Mail-Versand muss sonst ein <a href="https://wiki.phpbb.com/Modular_cron#Use_system_cron">System-Cronjob</a> eingerichtet und aktiviert werden. Weitere Informationen stehen in den FAQ zu dieser Extension im Forum von phpbb.com.',
+	'ACP_DIGESTS_TEST_EXPLAIN'								=> 'Diese Funktion ermöglicht den manuellen E-Mail-Versand zur Überprüfung der Grundeinstellungen oder zur Fehlersuche. Man kann mit dieser Funktion auch die abonnierten Zusammenfassungen für eine bestimmten Zeitpunkt (nochmal) versenden. Die Zeitzone des Boards wird dabei für die Berechnung des Datums und der Stunde verwendet. Bitte beachte, dass der Versand der Zusammenfassungen erst dadurch Nutzer-Aktivitäten im Board angestoßen werden können. Das bedeutet, dass die Zusammenfassungen etwas später als geplant gesendet werden. Für stundengenauen E-Mail-Versand muss sonst ein <a href="https://wiki.phpbb.com/Modular_cron#Use_system_cron">System-Cronjob</a> eingerichtet und aktiviert werden. Weitere Informationen stehen in den FAQ zu dieser Extension im Forum von phpbb.com.',
 
 	'LOG_CONFIG_DIGESTS_BAD_DIGEST_TYPE'					=> '<strong>Hinweis: Abonnent %1$s hat als Zusammenfassungsart %2$s eingestellt. Sinnvoller wäre jedoch die &rsquo;Tägliche Zusammenfassung&rsquo;.</strong>',
 	'LOG_CONFIG_DIGESTS_BAD_SEND_HOUR'						=> '<strong>Die Sendeuhrzeit von %1$s ist ungültig. Sie lautet %1$d. Der Wert muss immer >= 0 und < 24 sein.</strong>',

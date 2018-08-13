@@ -17,10 +17,6 @@ if (empty($lang) || !is_array($lang))
 	$lang = array();
 }
 
-global $phpbb_container;
-
-$config = $phpbb_container->get('config');
-
 $lang = array_merge($lang, array(
 	'PLURAL_RULE'						=> 1,
 
@@ -123,7 +119,7 @@ $lang = array_merge($lang, array(
 	'DIGESTS_SHOW_ATTACHMENTS_EXPLAIN'	=> 'Wenn diese Option aktiviert ist, werden angehängte Grafiken in der Zusammenfassung jeweils am Ende des entsprechenden Beitrages oder der Privaten Nachricht mit eingefügt. Andere Dateien erscheinen in form eines Links (nur bei HTML-Zusammenfassungen). Auf den BBCode [img]-Tag hat das keinen Einfluss.',
 	'DIGESTS_SHOW_NEW_POSTS_ONLY' 		=> 'Nur neue Beiträge anzeigen',
 	'DIGESTS_SHOW_PMS' 					=> 'Meine Privaten Nachrichten anzeigen',
-	'DIGESTS_SIZE_ERROR'				=> 'Dieser Wert muss angegeben werden. Es wird eine positive, ganze Zahl benötigt, die kleiner als oder gleich dem vom Administrator vorgegebene Maximalwert %s ist. Wenn dieser Wert auf Null steht, wurde keine Einschränkung vorgegeben.',
+	'DIGESTS_SIZE_ERROR'				=> 'Dieser Wert muss angegeben werden. Es wird eine positive, ganze Zahl benötigt, die kleiner als oder gleich dem vom Administrator vorgegebene Maximalwert ist. Wenn dieser Wert auf Null steht, wurde keine Einschränkung vorgegeben.',
 	'DIGESTS_SIZE_ERROR_MIN'			=> 'Hier muss entweder ein ganzzahliger Wert oder gar nichts stehen. Wenn der Wert Null ist, gibt es keine Einschränkung.',
 	'DIGESTS_SKIP'						=> 'Zum Inhalt springen',
 	'DIGESTS_SORT_BY'					=> 'Sortierreihenfolge',

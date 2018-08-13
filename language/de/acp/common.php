@@ -19,9 +19,6 @@ if (empty($lang) || !is_array($lang))
 
 global $phpbb_container;
 
-$config = $phpbb_container->get('config'); 
-$helper = $phpbb_container->get('phpbbservices.digests.common');
-
 $lang = array_merge($lang, array(
 	'DIGESTS_WEEKDAY' 					=> 'Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday',
 ));
@@ -67,7 +64,7 @@ $lang = array_merge($lang, array(
 	'DIGESTS_EXCLUDE_FORUMS'								=> 'Diese Themenbereiche immer ausschließen',
 	'DIGESTS_EXCLUDE_FORUMS_EXPLAIN'						=> 'Hier können die IDs der Themenbereiche ausgewählt werden, die von allen Zusammenfassungen generell ausgeschlossen werden sollen. Mehrere Forum-IDs können, durch Kommas getrennt, zusammen angegeben werden. 0 bedeutet, dass gar keine Themenbereich ausgeschlossen werden. Um die Themenbereichs-ID herauszufinden, muss man nach dem &rsquo;F&rsquo;-Parameter in den URL-Feldern suchen. Beispiel: http://www.example.com/phpBB3/viewforum.php?f=1. Bitte nicht die IDs von Kategorien verwenden! <i>Diese Option wird ignoriert, wenn nur die Lesezeichen-Themen vom Nutzer ausgewählt wurden.</i>',
 	'DIGESTS_EXPAND'										=> 'Ausklappen',
-	'DIGESTS_FREQUENCY_EXPLAIN'								=> 'Wöchentliche Zusammenfassungen werden immer an folgendem Wochentag versandt: ' . $weekdays[$config['phpbbservices_digests_weekly_digest_day']] . '. Monatliche Zusammenfassungen werden jeweils am Ersten des Monats versandt. Der Wochentag wird jeweils auf Basis der koordinierten Weltzeit (UTC) ermittelt.',
+	'DIGESTS_FREQUENCY_EXPLAIN'								=> 'Wöchentliche Zusammenfassungen werden an dem in der allgemeinen Konfiguration der Erweiterung festgelegten Wochentag versandt. Monatliche Zusammenfassungen werden jeweils am Ersten des Monats versandt. Der Wochentag wird jeweils auf Basis der koordinierten Weltzeit (UTC) ermittelt.',
 	'DIGESTS_FORMAT_FOOTER' 								=> 'Digest-Format',
 	'DIGESTS_FROM_EMAIL_ADDRESS'							=> 'Absendermailadresse',
 	'DIGESTS_FROM_EMAIL_ADDRESS_EXPLAIN'					=> 'Wenn die E-Mail-Zusammenfassung beim Nutzer eintrifft, erscheint diese E-Mailadresse im Absender-Feld (From). Wird das Feld leer gelassen, so wird automatisch die Kontaktmailadresse des Boards verwendet. Diese Adresse sollte mit Bedacht gewählt werden, da Adressen von einer fremden Domain schon vom absendenden Mailserver oder dann vom empfangenden Server leicht als spamverdächtig eingestuft und herausgefiltert werden könnten.',
@@ -126,12 +123,12 @@ $lang = array_merge($lang, array(
 	'DIGESTS_RUN_TEST_EMAIL_ADDRESS'						=> 'Testmailadresse',
 	'DIGESTS_RUN_TEST_EMAIL_ADDRESS_EXPLAIN'				=> 'Wenn hier eine E-Mailadresse angegeben ist, werden alle Zusammenfassungen des gewünschten Zeitpunktes an diese Adresse gesendet. Ist sie leer, wird bei Bedarf die Kontakt-Emailadresse des Boards als Empfängeradresse verwendet.',
 	'DIGESTS_RUN_TEST_HOUR'									=> 'Simulierte Uhrzeit',
-	'DIGESTS_RUN_TEST_HOUR_EXPLAIN'							=> 'Die Zusammenfassungen, die für die hier angegebene Stunde geplant sind oder waren, werden im Rahmen der Simulation erzeugt und versandt. Die Zeit bezieht sich auf die Zeitzoneneinstellung des Boards (UTC [+] ' . $helper->make_tz_offset($config['board_timezone']) . '). Liegt dieser Zeitpunkt in der Zukunft, so können die Zusammenfassungen keine Beiträge enthalten. Erlaubt sind ganze Zahlen zwischen 0 und 23.',
+	'DIGESTS_RUN_TEST_HOUR_EXPLAIN'							=> 'Die Zusammenfassungen werden ab der angegebenen Stunde versandt. Die Zeit bezieht sich auf die Zeitzoneneinstellung des Boards. Liegt dieser Zeitpunkt in der Zukunft, so können die Zusammenfassungen keine Beiträge enthalten. Erlaubt sind ganze Zahlen zwischen 0 und 23.',
 	'DIGESTS_RUN_TEST_MONTH'								=> 'Simulierter Monat',
 	'DIGESTS_RUN_TEST_MONTH_EXPLAIN'						=> 'Ganzzahliger Wert von 1 bis 12. Meist ist es sinnvoll, den gegenwärtigen Monat zu wählen. Wenn Jahr und Monat in der Zukunft liegen, werden natürlich keine Test-Zusammenfassungen erzeugt.',
 	'DIGESTS_RUN_TEST_OPTIONS'								=> 'Definierten Zeitpunkt simulieren',
 	'DIGESTS_RUN_TEST_SEND_TO_ADMIN'						=> 'Alle E-Mail-Zusammenfassungen an die unten festgelegte Adresse senden',
-	'DIGESTS_RUN_TEST_SEND_TO_ADMIN_EXPLAIN'				=> 'Zu Testzwecken, sollten die Zusammenfassungen nicht an die Nutzeradressen gesendet werden, sondern an eine Testmailadresse. Wenn hier &rsquo;Ja&rsquo; aktiviert ist, aber weiter unten keine entsprechende E-Mailadresse angegeben ist, gehen alle Test-Zusammenfassungen an die Kontaktadresse des Boards(' . $config['board_E-Mail']. '). <em>Achtung:</em> Manche E-Mail-Server werden solche großen Mengen an ähnlichen E-Mails vom selben Absender und in kurzem Zeitintervall als Spam-Versuch oder unangemessene Benutzung zurückweisen. Diese Funktion sollte sehr überlegt ausgewählt werden. Wird hier nämlich &rsquo;Nein&rsquo; selektiert, so werden evtl. alte Zusammenfassungen erneut an die Adressen der Nutzer gesendet, was zur Verwirrung führen kann.',
+	'DIGESTS_RUN_TEST_SEND_TO_ADMIN_EXPLAIN'				=> 'Zu Testzwecken, sollten die Zusammenfassungen nicht an die Nutzeradressen gesendet werden, sondern an eine Testmailadresse. Wenn hier &rsquo;Ja&rsquo; aktiviert ist, aber weiter unten keine entsprechende E-Mailadresse angegeben ist, gehen alle Test-Zusammenfassungen an die Kontaktadresse des Boards. <em>Achtung:</em> Manche E-Mail-Server werden solche großen Mengen an ähnlichen E-Mails vom selben Absender und in kurzem Zeitintervall als Spam-Versuch oder unangemessene Benutzung zurückweisen. Diese Funktion sollte sehr überlegt ausgewählt werden. Wird hier nämlich &rsquo;Nein&rsquo; selektiert, so werden evtl. alte Zusammenfassungen erneut an die Adressen der Nutzer gesendet, was zur Verwirrung führen kann.',
 	'DIGESTS_RUN_TEST_SPOOL'								=> 'Zusammenfassungen als Dateien speichern, anstatt sie als E-Mails zu senden',
 	'DIGESTS_RUN_TEST_SPOOL_EXPLAIN'						=> 'Verhindert das Versenden der Zusammenfassungen per E-Mail. Stattdessen wird jede Zusammenfassung in eine Datei im store/ext/phpbbservices/digests-Ordner geschrieben. Die Dateinamen haben dabei folgendes Format: username-yyyy-mm-dd-hh-uniqueID.html oder username-yyyy-mm-dd-hh-uniqueID.txt. (Dateien mit der Endung .txt sind Nur-Text-Zusammenfassungen.) yyyy ist das Jahr, mm der Monat, dd der Kalendertag, hh die Stunde und uniqueID ist ein vom System generierter 16-Byte langer hexadezimaler Zufalls-String. Daten und Uhrzeiten sind dort als UTC angegeben. Wenn weiter unten ein spezieller Simulationszeitpunkt angegeben wird, so wird dieser auch für den Dateinamen verwendet. Diese Dateien können unter der entsprechenden URL im Browser angesehen werden.',
 	'DIGESTS_RUN_TEST_TIME_USE'								=> 'Simuliere einen bestimmten Sendezeitpunkt',
