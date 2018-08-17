@@ -17,8 +17,6 @@ if (empty($lang) || !is_array($lang))
 	$lang = array();
 }
 
-global $phpbb_container;
-
 $lang = array_merge($lang, array(
 	'DIGESTS_WEEKDAY' 					=> 'Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday',
 ));
