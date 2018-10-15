@@ -37,7 +37,7 @@ $lang = array_merge($lang, array(
 	'ACP_DIGESTS_RESET_CRON_RUN_TIME'						=> 'Mailer zurücksetzen',
 	'ACP_DIGESTS_RESET_CRON_RUN_TIME_EXPLAIN'				=> '',
 	'ACP_DIGESTS_TEST'										=> 'Manueller Test-Versand',
-	'ACP_DIGESTS_TEST_EXPLAIN'								=> 'Diese Funktion ermöglicht den manuellen E-Mail-Versand zur Überprüfung der Grundeinstellungen oder zur Fehlersuche. Man kann mit dieser Funktion auch die abonnierten Zusammenfassungen für eine bestimmten Zeitpunkt (nochmal) versenden. Die Zeitzone des Boards wird dabei für die Berechnung des Datums und der Stunde verwendet. Bitte beachte, dass der Versand der Zusammenfassungen erst dadurch Nutzer-Aktivitäten im Board angestoßen werden können. Das bedeutet, dass die Zusammenfassungen etwas später als geplant gesendet werden. Für stundengenauen E-Mail-Versand muss sonst ein <a href="https://wiki.phpbb.com/Modular_cron#Use_system_cron">System-Cronjob</a> eingerichtet und aktiviert werden. Weitere Informationen stehen in den FAQ zu dieser Extension im Forum von phpbb.com.',
+	'ACP_DIGESTS_TEST_EXPLAIN'								=> 'Diese Funktion ermöglicht den manuellen E-Mail-Versand zur Überprüfung der Grundeinstellungen und auch zur Fehlersuche. Man kann mit dieser Funktion auch die abonnierten Zusammenfassungen für eine bestimmten Zeitpunkt (nochmal) versenden. Die Zeitzone des Boards wird dabei für die Berechnung des Datums und der Stunde verwendet. Bitte beachte, dass der Versand der Zusammenfassungen erst dadurch Nutzer-Aktivitäten im Board angestoßen werden können. Das bedeutet, dass die Zusammenfassungen etwas später als geplant gesendet werden. Für stundengenauen E-Mail-Versand muss sonst ein <a href="https://wiki.phpbb.com/Modular_cron#Use_system_cron">System-Cronjob</a> eingerichtet und aktiviert werden. Weitere Informationen stehen in den FAQ zu dieser Extension im Forum von phpbb.com.',
 
 	'LOG_CONFIG_DIGESTS_BAD_DIGEST_TYPE'					=> '<strong>Hinweis: Abonnent %1$s hat als Zusammenfassungsart %2$s eingestellt. Sinnvoller wäre jedoch die &rsquo;Tägliche Zusammenfassung&rsquo;.</strong>',
 	'LOG_CONFIG_DIGESTS_BAD_SEND_HOUR'						=> '<strong>Die Sendeuhrzeit von %1$s ist ungültig. Sie lautet %1$d. Der Wert muss immer >= 0 und < 24 sein.</strong>',
@@ -48,6 +48,7 @@ $lang = array_merge($lang, array(
 	'LOG_CONFIG_DIGESTS_DUPLICATE_PREVENTED'				=> '<strong>Die E-Mail-Zusammenfassung für %1$s (%2$s) vom %3$s, %4$02d UTC wurde nicht versandt, weil innerhalb dieser Stunde schon vorher eine Zusammenfassung an diesen Abonnenten versandt worden ist.</strong>',
 	'LOG_CONFIG_DIGESTS_EDIT_SUBSCRIBERS'					=> '<strong>Abonnenten bearbeitet</strong>',
 	'LOG_CONFIG_DIGESTS_FILE_CLOSE_ERROR'					=> '<strong>Die Datei %s kann nicht geschlossen werden</strong>',
+	'LOG_CONFIG_DIGESTS_CREATE_DIRECTORY_ERROR'				=> '<strong>Das Verzeichnis %s konnte nicht angelegt werden. Ursache könnten fehlende Dateirechte sein. Sie sollten auf &rsquo;publicly writeable&rsquo; sein (777 auf Unix-basierten Systemen).</strong>',
 	'LOG_CONFIG_DIGESTS_FILE_OPEN_ERROR'					=> '<strong>File Handler kann im Verzeichnis %s nicht geöffnet werden. Ursache könnten fehlende Datei-Rechte sein. Alle Dateien sollten &rsquo;publicly writeable&rsquo; sein (777 auf Unix-basierten Systemen).</strong>',
 	'LOG_CONFIG_DIGESTS_FILE_WRITE_ERROR'					=> '<strong>Die Datei %s konnte nicht gespeichert werden. Ursache könnten fehlende Datei-Rechte sein. Alle Dateien sollten &rsquo;publicly writeable&rsquo; sein (777 auf Unix-basierten Systemen).</strong>',
 	'LOG_CONFIG_DIGESTS_FILTER_ERROR'						=> '<strong>Der Digests-Mailer wurde mit ungültigem user_digest_filter_type = %1$s für %2$s aufgerufen</strong>',
@@ -61,7 +62,7 @@ $lang = array_merge($lang, array(
 																1 => '<strong>E-Mail-Zusammenstellung %1$s %2$s (%3$s) für den %4$s, %5$02d UTC mit %6$d Beitrag und %7$d Privaten Nachricht</strong>',
 																2 => '<strong>E-Mail-Zusammenstellung %1$s %2$s (%3$s) für den %4$s, %5$02d UTC mit %6$d Beiträgen und %7$d Privaten Nachrichten</strong>',
 															),
-	'LOG_CONFIG_DIGESTS_LOG_ENTRY_GOOD_DISK'				=> '<strong>Es wurde eine E-Mail-Zusammenstellung im Ordner cache/phpbbservices/digests/%s abgespeichert. Die Zusammenfassung wurde nicht per E-Mail versandt, sondern dort für Prüfzwecke hinterlegt.</strong>',
+	'LOG_CONFIG_DIGESTS_LOG_ENTRY_GOOD_DISK'				=> '<strong>Es wurde eine E-Mail-Zusammenstellung im Ordner store/phpbbservices/digests/%s abgespeichert. Die Zusammenfassung wurde nicht per E-Mail versandt, sondern dort für Prüfzwecke hinterlegt.</strong>',
 	'LOG_CONFIG_DIGESTS_LOG_ENTRY_GOOD_NO_EMAIL'			=> array(
 																1 => '<strong>E-Mail-Zusammenstellung %1$s %2$s für den %3$s, %4$02d UTC mit %5$d Beitrag und %6$d Privaten Nachricht</strong>',
 																2 => '<strong>E-Mail-Zusammenstellung %1$s %2$s für den %3$s, %4$02d UTC mit %5$d Beiträgen und %6$d Privaten Nachrichten</strong>',
