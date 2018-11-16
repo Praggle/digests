@@ -49,6 +49,7 @@ $lang = array_merge($lang, array(
 	'DIGESTS_CUSTOM_STYLESHEET_PATH_EXPLAIN'				=> 'Dieser Pfadangabe ist nur von Bedeutung, wenn weiter oben auch die Verwendung des Custom-Sylesheet aktiviert ist. Das Stylesheet wird dann für alle HTML-Zusammenfassungen verwendet. Es muss der relative Pfad zum phpBB-styles-Verzeichnis angegeben werden. Es ist sinnvoll, dafür ein eigenes Unterverzeichnis innerhalb des Themes anzulegen. Anmerkung: Es fällt in deinen eigenen Zuständigkeitsbereich, selbst ein solches Stylesheet zu entwickeln und es unter dem hier angegebenen Pfad und Namen auf den Server zu hinterlegen. Beispiel: prosilver/theme/digest_stylesheet.css. Informationen zum Erstellen von Stylesheets findest du <a href="http://www.w3schools.com/css/">hier</a>.',
 	'DIGESTS_COLLAPSE'										=> 'Einklappen',
 	'DIGESTS_COMMA'											=> ', ',		// Used  in salutations and to separate items in lists
+	'DIGESTS_CREATE_DIRECTORY_ERROR'						=> 'Das Verzeichnis %s konnte nicht angelegt werden. Ursache können unzureichende Zugriffsrechte sein. Die Datei-Zugriffsrechte des Ordners sollten auf Publicly Writeable (777 bei Unix-basierten Systemen) stehen.',
 	'DIGESTS_DEFAULT'										=> 'Abonnement mit Standard-Einstellungen anlegen',
 	'DIGESTS_DAILY_ONLY'									=> 'Nur tägliche Zusammenfassung',
 	'DIGESTS_ENABLE_AUTO_SUBSCRIPTIONS'						=> 'Automatisches Abonnieren aktivieren',
@@ -95,6 +96,8 @@ $lang = array_merge($lang, array(
 	'DIGESTS_MAX_ITEMS_EXPLAIN'								=> 'Aus Performance-Gründen kann es sinnvoll sein, hier eine absolute Obergrenze für alle Zusammenfassungen festzulegen. Eine Null bedeutet, dass es kein Beitragslimit gibt und die Zusammenfassungen unendlich groß werden können. Es sind nur ganzzahlige Werte erlaubt. Dabei ist zu bedenken, dass die Größe der Zusammenstellungen auch durch die gewählte Zusammenfassungsart (täglich, wöchentlich, monatlich) und durch andere Voreinstellungen weiter eingeschränkt werden kann.',
 	'DIGESTS_MAIL_FREQUENCY' 								=> 'Häufigkeit der E-Mail-Zusammenstellung',
 	'DIGESTS_MIGRATE_UNSUPPORTED_VERSION'					=> 'Upgrades des Digests-Mods (for phpBB 3.0) werden nur ab Version 2.2.6 und höher unterstützt. Die hier vorgefundene Version lautet jedoch %s. Die Extension kann deshalb leider nicht hierher migriert werden. Ein Update auf Basis des alten Datenbestandes ist nicht möglich. Unterstützung kann man bei Bedarf jedoch im entsprechenden Forum auf phpbb.com erhalten.',
+	'DIGESTS_MIN_POPULARITY_SIZE'							=> 'Mindestbeitragszahl für beliebte Themen',
+	'DIGESTS_MIN_POPULARITY_SIZE_EXPLAIN'					=> 'Hier wird die Mindestbeitragszahl pro Tag festgelegt, die ein Thema als beliebt einstuft. Abonnenten können keine niedrigeren Werte festlegen. Dieser Wert bezieht sich auf das jeweils vom Nutzer festgelegte Zusammenfassungsintervall: Tag, Woche oder Monat.',
 	'DIGESTS_MONTHLY_ONLY'									=> 'Nur monatliche Zusammenfassung',
 	'DIGESTS_NEVER_VISITED'									=> 'Noch nie besucht',
 	'DIGESTS_NO_DIGESTS_SENT'								=> 'Keine Zusammenfassung versandt',
