@@ -2,7 +2,7 @@
 /**
 *
 * @package phpBB Extension - Digests
-* @copyright (c) 2018 Mark D. Hamill (mark@phpbbservices.com)
+* @copyright (c) 2019 Mark D. Hamill (mark@phpbbservices.com)
 * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
 *
 */
@@ -62,7 +62,7 @@ $lang = array_merge($lang, array(
 	'DIGESTS_JUMP_TO_MSG'				=> 'Nachrichten-Nr.',
 	'DIGESTS_JUMP_TO_POST'				=> 'Beitrags-Nr.',
 	'DIGESTS_LASTVISIT_RESET'			=> 'Gespeicherten Zeitpunkt des letzten Forumsbesuches beim Versand der Zusammenfassung aktualisieren',
-	'DIGESTS_LASTVISIT_RESET_EXPLAIN'	=> 'Beim Aktivieren dieser Option werden alle Beiträge, die vor dem Versandzeitpunkt veröffentlicht worden sind, evtl. als gelesen markiert. Das bedeutet, dass aus Sicht der Forumssoftware diese Beiträge von dir bereits gelesen worden sind, obwohl du die Zusammenfassungsmail vielleicht noch gar nicht wirklich gelesen hast.',
+	'DIGESTS_LASTVISIT_RESET_EXPLAIN'	=> 'Beim Aktivieren dieser Option wird der Zeitpunkt, an dem die Zusammenfassung erzeugt worden ist, als Zeitpunkt deines letzten Besuches im Forum übernommen. Beiträge und Nachrichten, die vor diesem Versandzeitpunkt veröffentlicht worden sind, werden ferner als gelesen markiert.',
 	'DIGESTS_LINK'						=> 'Link',
 	'DIGESTS_MARK_READ'					=> 'Beiträge als gelesen markieren, wenn sie in der Zusammenfassung aufgeführt werden',
 	'DIGESTS_MAX_DISPLAY_WORDS'			=> 'Maximal angezeigte Wortanzahl in den Beiträgen',
