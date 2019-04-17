@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 **Dateiangabe**
-Pfad und Dateiname
+Pfad und Dateiname, ggf. Branch
 
 **Zeilenangabe**
 Zeilennummer des Fehlers
