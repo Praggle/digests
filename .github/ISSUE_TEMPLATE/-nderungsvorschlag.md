@@ -1,7 +1,7 @@
 ---
-name: Fehlermeldung
-about: Bitte den Fehler in der Übersetzung genau beschreiben
-title: Übersetzungsfehler
+name: Änderungsvorschlag
+about: Vorschlag für andere Übersetzung einer Textxtelle
+title: Änderungsvorschlag
 labels: ''
 assignees: ''
 
@@ -17,7 +17,7 @@ Zeilennummer des Fehlers
 Textkopie
 
 **Vorschlag für geänderte Textvariante**
-Korrigierte Übersetzung
+Neue Übersetzung
 
 **Kommentar / Begründung**
-Ergänzende Hinweise zum Fehler
+Ergänzende Hinweise und Informationen zum Änderungsvorschlag.
