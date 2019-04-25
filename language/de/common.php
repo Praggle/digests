@@ -146,7 +146,6 @@ $lang = array_merge($lang, array(
 	'DIGESTS_WEEKDAY' 					=> 'Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday',
 	'DIGESTS_WEEKLY'					=> 'Wöchentliche Zusammenfassung',
 	'DIGESTS_YOU_HAVE_PRIVATE_MESSAGES' => '%s hat Private Nachrichten erhalten',
-	'DIGESTS_YOUR_DIGEST_OPTIONS' 		=> '%s&rsquo;s persönliche Einstellungen:',
 	
 	'UCP_DIGESTS'								=> 'E-Mail-Zusammenfassungen',
 	'UCP_DIGESTS_ADDITIONAL_CRITERIA'			=> 'Weitere Optionen',
