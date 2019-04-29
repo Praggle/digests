@@ -1,6 +1,6 @@
 <?php
 /**
-* 
+*
 * @package phpBB Extension - Digests
 * @copyright (c) 2019 Mark D. Hamill (mark@phpbbservices.com)
 * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
@@ -81,7 +81,7 @@ $lang = array_merge($lang, array(
 	'DIGESTS_LIST_USERS'    								=> array(
 																	1 => 'Es wird nur ein Nutzer angezeigt ',
 																	2 => 'Es werden insgesamt %d Nutzer aufgelistet |',
-																),
+															),
 	'DIGESTS_LOWERCASE_DIGEST_TYPE'							=> 'Kleinschreibung der Zusammenfassungsart',
 	'DIGESTS_LOWERCASE_DIGEST_TYPE_EXPLAIN'					=> 'In manchen Sprachen kann es sinnvoll sein, z.B. aus &ldquo;Digest Daily My board name&rdquo; &ldquo;Digest daily of my board name&rdquo;, zu machen. Der erste Buchstabe des Board-Namens wird dabei auch verkleinert.',
 	'DIGESTS_MAILER_NOT_RUN'								=> 'Mailer wurde nicht gestartet, weil er nicht aktiviert war.',
