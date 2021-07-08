@@ -2,7 +2,7 @@
 /**
 *
 * @package phpBB Extension - Digests
-* @copyright (c) 2019 Mark D. Hamill (mark@phpbbservices.com)
+* @copyright (c) 2021 Mark D. Hamill (mark@phpbbservices.com)
 * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
 *
 */
@@ -34,13 +34,15 @@ $lang = array_merge($lang, array(
 	'DIGESTS_COUNT_LIMIT_EXPLAIN'		=> 'Gib einen Wert >0 ein, um die Anzahl der in einer Zusammenfassung angezeigten Beiträge zu begrenzen.',
 	'DIGESTS_DAILY'						=> 'Tägliche Zusammenfassung',
 	'DIGESTS_DATE'						=> 'Datum',
-	'DIGESTS_DELIMITER'					=> ' :: ', // Wird verwendet, um die Gliederungsebenen der Foren zu verdeutlichen
+	'DIGESTS_DELIMITER'					=> ' &#8249; ', // Wird verwendet, um die Gliederungsebenen der Foren zu verdeutlichen. Sollte sich bei Übersetzungen nicht verändern, es sei denn, es wird ein anderes Zeichen im Breadcrumb-Menü verwendet.
 	'DIGESTS_DISABLED_MESSAGE'			=> 'Zum Aktivieren der E-Mail-Zusammenfassung bitte die gewünschte Art und das Layout der Zusammenfassung auswählen.',
-	'DIGESTS_DISCLAIMER'				=> 'Im <a href="%1$sucp.%3$s">Persönlichen Bereich</a> kann man die Abonnements einzelner Themenbereiche ändern oder ganz beenden. Bei Problemen oder über das Forum nicht lösbaren Fragen kannst du dich ggf. auch direkt an <a href="mailto:%4$s?subject=E-Mail-Zusammenfassung">den Webmaster von %2$s</a> wenden.',
+	'DIGESTS_DISCLAIMER'				=> 'Im <a href="%1$sucp.%3$s">Persönlichen Bereich</a> kann man die Abonnements einzelner Themenbereiche ändern oder ganz beenden. Bei Problemen oder bei Fragen, die über das Board nicht lösbar sind, kannst du dich ggf. auch direkt an <a href="mailto:%4$s?subject=E-Mail-Zusammenfassung">den Webmaster von %2$s</a> wenden.',
 	'DIGESTS_EXPLANATION'				=> 'Bei den E-Mail-Zusammenfassungen handelt es sich um eine automatisierte, regelmäßig per Email versandte Zusammenfassung der im Forum veröffentlichten Beiträge. Die Zusammenfassungen können täglich, wöchentlich oder einmal im Monat erzeugt werden. Du kannst dabei individuell die einzelnen Themenbereiche auswählen, die du erhalten möchtest oder dir standardmäßig alle Themenbereiche, zu denen du Zugang hast, zusammenfassen lassen. Auf dieser Seite kannst du auch jederzeit dein Abonnement ganz beenden. Viele Teilnehmer schätzen diese Form des regelmäßigen Überblicks über die Aktivitäten im Forum sehr. Wir empfehlen deshalb die Aktivierung dieser Funktion.',
 	'DIGESTS_FILTER_ERROR'				=> 'Der Digest Mailer wurde mit einem ungültigen user_digest_filter_type = %s aufgerufen',
 	'DIGESTS_FILTER_FOES'				=> 'Beiträge von \'ignorierten Mitgliedern\' entfernen',
 	'DIGESTS_FILTER_TYPE'				=> 'Vorauswahl',
+	'DIGESTS_FOREIGN_LINK_REMOVED'		=> '[ Externer Link wurde entfernt. Beitrags- oder Themen-Link anklicken, um diesen Link sehen zu können. ]',
+	'DIGESTS_FOREIGN_LINK_REMOVED_TEXT'	=> '[ Externer Link wurde entfernt. Bitte das Thema im Forum öffnen, um den Link sehen zu können. ]',
 	'DIGESTS_FORMAT_HTML'				=> 'Grafisch formatiert',
 	'DIGESTS_FORMAT_HTML_EXPLAIN'		=> 'Eine grafische HTML-Formatierung wird mit eingebunden, wenn dein E-Mail-Program das ermöglicht.',
 	'DIGESTS_FORMAT_HTML_CLASSIC'		=> 'Grafische HTML-Formatierung mit klassischem Tabellen-Layout',
@@ -58,7 +60,8 @@ $lang = array_merge($lang, array(
 	'DIGESTS_FREQUENCY_EXPLAIN'			=> 'Wöchentliche Zusammenfassungen werden immer %s erzeugt. Monatliche Zusammenfassungen werden jeweils am ersten Tag des Monats versandt. Der Wochentag wird auf der Basis der aktuellen Zeit (UTC) bereichnet.',
 	'DIGESTS_FREQUENCY_SHORT'			=> 'Zusammenfassungsart',
 	'DIGESTS_HOURS_ABBREVIATION' 		=> ' h',	// Abkürzung für Stunden verbleibt in der englischen Form, um Probleme mit Formatierungen zu vermeinden. Vielleicht wäre ' Uhr' aber korrekter. DIGESTS_AM und DIGESTS_PM werden alternativ verwendet, wenn in user_dateformat definiert
-	'DIGESTS_INTRODUCTION' 				=> 'hier kommt deine persönliche Zusammenfassung der neuesten Beiträge von \'%s\'. Vielleicht findest du darin auch ein Thema, an dem du dich gerne beteiligen möchtest, dann antworte bitte nicht auf diese E-Mail, sondern schreibe direkt im Forum an der passenden Stelle.',
+	'DIGESTS_INSTALL_REQUIREMENTS'		=> 'Zum Installieren dieser Extension ist PHP &gt; 3.3.0 and &lt; 4.0 notwendig. Bitte eine entsprechende PHP-Version installieren und die Extension anschließend erneut aktivieren.',
+	'DIGESTS_INTRODUCTION' 				=> 'hier kommt deine persönliche Zusammenfassung der neuesten Beiträge von \'%s\'. Vielleicht findest du darin auch ein Thema, an dem du dich gerne beteiligen möchtest, dann antworte bitte nicht auf diese E-Mail, sondern schreibe direkt im Board an der passenden Stelle.',
 	'DIGESTS_JUMP_TO_MSG'				=> 'Nachrichten-Nr.',
 	'DIGESTS_JUMP_TO_POST'				=> 'Beitrags-Nr.',
 	'DIGESTS_LASTVISIT_RESET'			=> 'Gespeicherten Zeitpunkt des letzten Forumsbesuches beim Versand der Zusammenfassung aktualisieren',
@@ -72,13 +75,14 @@ $lang = array_merge($lang, array(
 	'DIGESTS_MIN_SIZE'					=> 'Mindestwortanzahl, um in die Zusammenstellung aufgenommen zu werden.',
 	'DIGESTS_MIN_SIZE_EXPLAIN'			=> 'Wenn das Feld auf 0 gesetzt ist, werden Beiträge in jeder beliebigen Länge mit aufgenommen.',
 	'DIGESTS_MIN_POPULARITY_VALUE'		=> 'Mindestbeitragszahl für beliebtes Thema',
-	'DIGESTS_MIN_POPULARITY_VALUE_EXPLAIN'		=> 'Ein Thema muss einen Mindestdurchschnitt von so vielen Beiträgen pro Tag während des Zusammenfassungsintervalles (Tag, Woche oder Monat) aufweisen, um in der Zusammenfassung zu erscheinen. Er kann nicht unter dem vom Forumsadministrator vorgegebenen Grenzwert liegen.',
+	'DIGESTS_MIN_POPULARITY_VALUE_EXPLAIN'		=> 'Ein Thema muss einen Mindestdurchschnitt von so vielen Beiträgen pro Tag während des Zusammenfassungsintervalles (Tag, Woche oder Monat) aufweisen, um in der Zusammenfassung zu erscheinen. Er kann nicht unter dem vom Boardadministrator vorgegebenen Grenzwert liegen.',
 	'DIGESTS_MONTHLY'					=> 'Monatliche Zusammenfassung',
 	'DIGESTS_NEW'						=> 'Neue Beiträge',
 	'DIGESTS_NEW_POSTS_ONLY'			=> 'Zeige nur neu veröffentlichte Beiträge',
 	'DIGESTS_NEW_POSTS_ONLY_EXPLAIN'	=> 'Durch diese Option werden alle Beiträge herausgefiltert, die vor dem Zeitpunkt deines letzten Forumsbesuches veröffentlicht worden sind. Wenn du das Forum viel besuchst und dort direkt die Beiträge liest, können dir dadurch wichtige Beiträge in der Zusammenfassung fehlen. Außerdem kannst du unter Umständen auch Beiträge aus den Themenbereichen verpassen, die du noch nicht besucht hast.',
 	'DIGESTS_NO_BOOKMARKED_POSTS'		=> 'Es gibt keine neuen abonnierten Beiträge.',
 	'DIGESTS_NO_CONSTRAINT'				=> 'Ohne Beschränkung',
+	'DIGESTS_NO_FORUMS_AVAILABLE'		=> 'Es gibt leider zu keinem der Themenbereiche Zugang.',
 	'DIGESTS_NO_FORUMS_CHECKED' 		=> 'Mindestens ein Themenbereich muss ausgewählt sein',
 	'DIGESTS_NO_LIMIT'					=> 'Ohne Beschränkung',
 	'DIGESTS_NO_POSTS'					=> 'Es gibt keine neuen Beiträge.',
@@ -121,7 +125,7 @@ $lang = array_merge($lang, array(
 	'DIGESTS_SHOW_ATTACHMENTS_EXPLAIN'	=> 'Wenn diese Option aktiviert ist, werden angehängte Grafiken in der Zusammenfassung jeweils am Ende des entsprechenden Beitrages oder der Privaten Nachricht mit eingefügt. Andere Dateien erscheinen in form eines Links (nur bei HTML-formatierten Zusammenfassungen). Auf den BBCode [img]-Tag hat das keinen Einfluss.',
 	'DIGESTS_SHOW_NEW_POSTS_ONLY' 		=> 'Nur neue Beiträge anzeigen',
 	'DIGESTS_SHOW_PMS' 					=> 'Meine Privaten Nachrichten anzeigen',
-	'DIGESTS_SIZE_ERROR'				=> 'Dieser Wert muss angegeben werden. Es wird eine positive, ganze Zahl benötigt, die kleiner als oder gleich dem vom Administrator vorgegebene Maximalwert ist. Wenn dieser Wert auf Null steht, wurde keine Einschränkung vorgegeben.',
+	'DIGESTS_SIZE_ERROR'				=> 'Dieser Wert muss angegeben werden. Es wird eine positive, ganze Zahl benötigt, die kleiner als oder gleich dem vom Board-Administrator vorgegebene Maximalwert ist. Wenn dieser Wert auf Null steht, wurde keine Einschränkung vorgegeben.',
 	'DIGESTS_SIZE_ERROR_MIN'			=> 'Hier muss entweder ein ganzzahliger Wert oder gar nichts stehen. Wenn der Wert Null ist, gibt es keine Einschränkung.',
 	'DIGESTS_SKIP'						=> 'Zum Inhalt springen',
 	'DIGESTS_SORT_BY'					=> 'Sortierreihenfolge',
