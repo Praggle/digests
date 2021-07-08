@@ -2,7 +2,7 @@
 /**
  *
  * @package phpBB Extension - Digests
- * @copyright (c) 2019 Mark D. Hamill (mark@phpbbservices.com)
+ * @copyright (c) 2021 Mark D. Hamill (mark@phpbbservices.com)
  * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
  *
  */
@@ -46,6 +46,10 @@ $lang = array_merge($lang, array(
 	'LOG_CONFIG_DIGESTS_CACHE_CLEARED'						=> '<strong>Der store/ext/phpbbservices/digests-Ordner wurde geleert',
 	'LOG_CONFIG_DIGESTS_CLEAR_SPOOL_ERROR'					=> '<strong>Es konnten nicht alle Dateien aus dem store/ext/phpbbservices/digests-Ordner entfernt werden. Ursache könnten fehlende Datei-Rechte sein. Alle Dateien sollten &rsquo;publicly writeable&rsquo; sein (777 auf Unix-basierten Systemen).</strong>',
 	'LOG_CONFIG_DIGESTS_CREATE_DIRECTORY_ERROR'				=> '<strong>Das Verzeichnis %s konnte nicht angelegt werden. Ursache könnten fehlende Dateirechte sein. Sie sollten auf &rsquo;publicly writeable&rsquo; sein (777 auf Unix-basierten Systemen).</strong>',
+	'LOG_CONFIG_DIGESTS_CRITICAL_ERROR'						=> '<strong>Der Digest Mailer hat einen unerwarteten Fehler verursacht.<br>Error number: [%1$s]<br>Error: %2$s<br>Program: %3$s Line: %4$s</strong>',
+	'LOG_CONFIG_DIGESTS_DEBUG_POSTS_CURRENT_HOUR'			=> '<strong>Debug: Subscribers SQL posts query: Date UTC: %s Hour UTC: %s SQL = %s</strong>',
+	'LOG_CONFIG_DIGESTS_DEBUG_SHOULD_RUN'					=> '<strong>Debug: Should run: %s, digest can run after this time: %s</strong>',
+	'LOG_CONFIG_DIGESTS_DEBUG_SQL_CURRENT_HOUR'				=> '<strong>Debug: Subscribers SQL query: Date UTC: %s Hour UTC: %s SQL = %s</strong>',
 	'LOG_CONFIG_DIGESTS_EDIT_SUBSCRIBERS'					=> '<strong>Abonnenten bearbeitet</strong>',
 	'LOG_CONFIG_DIGESTS_EMAILING_FAILURE'					=> '<strong>E-Mail-Zusammenfassung vom %s, %d Uhr UTC konnte nicht versandt werden.</strong>',
 	'LOG_CONFIG_DIGESTS_EXCEPTION_ERROR'					=> '<strong>Folgende PHP try/catch exception ist aufgetreten: %s</strong>',
@@ -53,10 +57,12 @@ $lang = array_merge($lang, array(
 	'LOG_CONFIG_DIGESTS_FILE_OPEN_ERROR'					=> '<strong>File Handler kann im Verzeichnis %s nicht geöffnet werden. Ursache könnten fehlende Datei-Rechte sein. Alle Dateien sollten &rsquo;publicly writeable&rsquo; sein (777 auf Unix-basierten Systemen).</strong>',
 	'LOG_CONFIG_DIGESTS_FILE_WRITE_ERROR'					=> '<strong>Die Datei %s konnte nicht gespeichert werden. Ursache könnten fehlende Datei-Rechte sein. Alle Dateien sollten &rsquo;publicly writeable&rsquo; sein (777 auf Unix-basierten Systemen).</strong>',
 	'LOG_CONFIG_DIGESTS_FILTER_ERROR'						=> '<strong>Der Digests-Mailer wurde mit ungültigem user_digest_filter_type = %1$s für %2$s aufgerufen</strong>',
-	'LOG_CONFIG_DIGESTS_FORMAT_ERROR'						=> '<strong>Der Digest-Mailer wurde mit ungültigem user_digest_format %1$s für %2$s aufgerufen</strong>',
+	'LOG_CONFIG_DIGESTS_FORMAT_ERROR'						=> '<strong>Der Digests-Mailer wurde mit ungültigem user_digest_format %1$s für %2$s aufgerufen</strong>',
 	'LOG_CONFIG_DIGESTS_GENERAL'							=> '<strong>Allgemeine Konfiguration der E-Mail-Zusammenstellung geändert</strong>',
 	'LOG_CONFIG_DIGESTS_HOUR_RUN'							=> '<strong>E-Mail-Zusammenfassung für %1$s um %2$02d UTC gestartet.</strong>',
 	'LOG_CONFIG_DIGESTS_INCONSISTENT_DATES'					=> '<strong>Außergewöhnlicher Fehler: Es wurden einzelne Stunden nicht abgearbeitet, weil die letzten Zusammenfassungen bereits erfolgreich versandt worden sind (timestamp %1$d), nachdem die Zeit für die Zusammenfassungserzeugung abgelaufen war (timestamp %2$d).</strong>',
+	'LOG_CONFIG_DIGESTS_LOG_ABEND'							=> '<strong>Der Digests-Mailer wurde abnormal beendet. Bitte das Fehler-Protokoll für weitere Details überprüfen.</strong>',
+	'LOG_CONFIG_DIGESTS_LOG_END'							=> '<strong>Digests-Mailer beendet</strong>',
 	'LOG_CONFIG_DIGESTS_LOG_ENTRY_BAD'						=> '<strong>E-Mail-Zusammenstellung für %1$s (%2$s) konnte nicht erfolgreich versandt werden</strong>',
 	'LOG_CONFIG_DIGESTS_LOG_ENTRY_BAD_NO_EMAIL'				=> '<strong>E-Mail-Zusammenstellung für %s konnte nicht erfolgreich versandt werden</strong>',
 	'LOG_CONFIG_DIGESTS_LOG_ENTRY_GOOD'						=> array(
@@ -71,7 +77,6 @@ $lang = array_merge($lang, array(
 	'LOG_CONFIG_DIGESTS_LOG_ENTRY_NONE'						=> '<strong>Die geplante E-Mail-Zusammenstellung für %1$s (%2$s) wurde nicht gesendet, weil es aufgrund von Nutzer-Einstellungen und möglichen Filtervorgaben nichts zu versenden gab.</strong>',
 	'LOG_CONFIG_DIGESTS_LOG_ENTRY_NONE_NO_EMAIL'			=> '<strong>Die geplante E-Mail-Zusammenstellung für %s wurde nicht gesendet, weil es aufgrund von Nutzer-Einstellungen und möglichen Filtervorgaben nichts zu versenden gab.</strong>',
 	'LOG_CONFIG_DIGESTS_LOG_START'							=> '<strong>Digests-Mailer gestartet</strong>',
-	'LOG_CONFIG_DIGESTS_LOG_END'							=> '<strong>Digests-Mailer beendet</strong>',
 	'LOG_CONFIG_DIGESTS_MAILER_RAN_WITH_ERROR'				=> '<strong>Ein Fehler trat während der Verwendung des Digest-Mailers auf. Es können dennoch einige E-Mail-Zusammenfassungen erfolgreich erstellt worden sein.</strong>',
 	'LOG_CONFIG_DIGESTS_MANUAL_RUN'							=> '<strong>Mailer manuell gestartet</strong>',
 	'LOG_CONFIG_DIGESTS_MESSAGE'							=> '<strong>%s</strong>',	// Used for general debugging, otherwise hard to do in cron mode.
@@ -86,7 +91,6 @@ $lang = array_merge($lang, array(
 	'LOG_CONFIG_DIGESTS_SIMULATION_DATE_TIME'				=> '<strong>Ein Administrator hat E-Mail-Zusammenstellungen für %s Board-Zeit erzeugt.</strong>',
 	'LOG_CONFIG_DIGESTS_SORT_BY_ERROR'						=> '<strong>Der Digest-Mailer mit ungültigem user_digest_sortby = %s für %s aufgerufen</strong>',
 	'LOG_CONFIG_DIGESTS_SYSTEM_CRON_RUN'					=> '<strong>Mailer durch externen System-Cronjob gestartet.</strong>',
-	'LOG_CONFIG_DIGESTS_TEST'								=> '<strong>%s</strong>',	// Used for general troubleshooting, please keep as is in all translations.
 	'LOG_CONFIG_DIGESTS_TIMEZONE_ERROR'						=> '<strong>Die user_timezone "%1$s" für Nutzer "%2$s" ist fehlerhaft. Die Zeitzone lautet "%3$s". Bitte den Nutzer seine Zeitenzoneneinstellung im UCP zu korrigieren. Siehe dazu auch die Liste erlaubter Einstellungen unter http://php.net/manual/de/timezones.php.</strong>',
 	'LOG_CONFIG_DIGESTS_USER_DEFAULTS'						=> '<strong>Standard-Nutzereinstellungen geändert</strong>',
 ));

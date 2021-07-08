@@ -2,7 +2,7 @@
 /**
  *
  * @package phpBB Extension - Digests
- * @copyright (c) 2019 Mark D. Hamill (mark@phpbbservices.com)
+ * @copyright (c) 2021 Mark D. Hamill (mark@phpbbservices.com)
  * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
  *
  */
@@ -50,6 +50,8 @@ $lang = array_merge($lang, array(
 	'DIGESTS_CURRENT_VERSION_INFO'							=> 'Aktuelle Version: <strong>%s</strong>',
 	'DIGESTS_CUSTOM_STYLESHEET_PATH'						=> 'Pfad zum Custom-Stylesheet',
 	'DIGESTS_CUSTOM_STYLESHEET_PATH_EXPLAIN'				=> 'Dieser Pfadangabe ist nur von Bedeutung, wenn weiter oben auch die Verwendung des Custom-Sylesheet aktiviert ist. Das Stylesheet wird dann für alle HTML-Zusammenfassungen verwendet. Es muss der relative Pfad zum phpBB-styles-Verzeichnis angegeben werden. Es ist sinnvoll, dafür ein eigenes Unterverzeichnis innerhalb des Themes anzulegen. Anmerkung: Es fällt in deinen eigenen Zuständigkeitsbereich, selbst ein solches Stylesheet zu entwickeln und es unter dem hier angegebenen Pfad und Namen auf den Server zu hinterlegen. Beispiel: prosilver/theme/digest_stylesheet.css. Informationen zum Erstellen von Stylesheets findest du <a href="http://www.w3schools.com/css/">hier</a>.',
+	'DIGESTS_DEBUG'											=> 'Digests-Debugging aktivieren',
+	'DIGESTS_DEBUG_EXPLAIN'									=> 'Für technische Fehlersuche. Einige wichtige Schlüssel-Informationen zur Fehlereingrenzung werden ins Admin-Log geschrieben, z.B. Datenbankabfragen zur Erzeugung von Zusammenfassungen. Zur Interpretation solcher Einträge sind fortgeschrittene Programm-Kenntnisse erforderlich.',
 	'DIGESTS_DEFAULT'										=> 'Abonnement mit Standard-Einstellungen anlegen',
 	'DIGESTS_DAILY_ONLY'									=> 'Nur tägliche Zusammenfassung',
 	'DIGESTS_ENABLE_AUTO_SUBSCRIPTIONS'						=> 'Automatisches Abonnieren aktivieren',
@@ -86,6 +88,7 @@ $lang = array_merge($lang, array(
 	'DIGESTS_LOWERCASE_DIGEST_TYPE'							=> 'Kleinschreibung der Zusammenfassungsart',
 	'DIGESTS_LOWERCASE_DIGEST_TYPE_EXPLAIN'					=> 'In manchen Sprachen kann es sinnvoll sein, z.B. aus &ldquo;Digest Daily My board name&rdquo; &ldquo;Digest daily of my board name&rdquo;, zu machen. Der erste Buchstabe des Board-Namens wird dabei auch verkleinert.',
 	'DIGESTS_MAIL_FREQUENCY' 								=> 'Häufigkeit der E-Mail-Zusammenstellung',
+	'DIGESTS_MAILER_RESET' 									=> 'Der Digest Mailer wurde zurück gesetzt',
 	'DIGESTS_MAILER_NOT_RUN'								=> 'Mailer wurde nicht gestartet, weil er nicht aktiviert war oder es keine Löschanforderung für das Digests-Verzeichnis gab.',
 	'DIGESTS_MAILER_RAN_SUCCESSFULLY'						=> 'Mailer wurde erfolgreich gestartet.',
 	'DIGESTS_MAILER_RAN_WITH_ERROR'							=> 'Bei der Ausführung des Mailers ist ein Fehler aufgetreten. Dabei können jedoch Zusammenfassungen durchaus erfolgreich erzeugt worden sein. Die Administrations- oder das Fehlerprotokoll kann dazu ggf. genauere Informationen enthalten.',
@@ -140,7 +143,7 @@ $lang = array_merge($lang, array(
 	'DIGESTS_SHOW_EMAIL'									=> 'E-Mailadresse im Log anzeigen',
 	'DIGESTS_SHOW_EMAIL_EXPLAIN'							=> 'Wenn diese Option aktiviert ist, wird zusätzlich zum Nutzernamen auch die E-Mailadresse des Nutzers im Administrationsprotokoll mit aufgeführt. Gerade im Zusammenhang mit Mailer-Problemen kann diese Funktion bei der Fehlersuche hilfreich sein.',
 	'DIGESTS_SHOW_FORUM_PATH'								=> 'Hierarchische Pfade in der Zusammenfassung anzeigen',
-	'DIGESTS_SHOW_FORUM_PATH_EXPLAIN'						=> 'Bei Aktivierung dieser Option wird der komplette hierarchische Pfad aus Kategorie, Forum und Unterforum angezeigt, z.B. &ldquo;Kategorie 1 :: Forum 1 :: Kategorie A :: Forum B&rdquo;. Im anderen Fall wird nur der Forenname angezeigt: &ldquo;Forum B&rdquo;',
+	'DIGESTS_SHOW_FORUM_PATH_EXPLAIN'						=> 'Bei Aktivierung dieser Option wird der komplette hierarchische Pfad aus Kategorie, Forum und Unterforum angezeigt, z.B. &ldquo;Kategorie 1 &#8249; Forum 1 &#8249; Kategorie A &#8249; Forum B&rdquo;. Im anderen Fall wird nur der Forenname angezeigt: &ldquo;Forum B&rdquo;',
 	'DIGESTS_SORT_ORDER'									=> 'Sortierreihenfolge',
 	'DIGESTS_STOPPED_SUBSCRIBING'							=> 'Abonnement gestoppt',
 	'DIGESTS_STRIP_TAGS'									=> 'Auszuschließende HTML-Tags',
@@ -154,6 +157,8 @@ $lang = array_merge($lang, array(
 	'DIGESTS_SUBSCRIBERS_DAILY'                           	=> 'Tägliche Abonnenten',
 	'DIGESTS_SUBSCRIBERS_WEEKLY'                           	=> 'Wöchentliche Abonnenten',
 	'DIGESTS_SUBSCRIBERS_MONTHLY'                           => 'Monatliche Abonnenten',
+	'DIGESTS_UNLINK_FOREIGN_URLS'							=> 'Entferne externe URLs aus den Zusammenfassungen',
+	'DIGESTS_UNLINK_FOREIGN_URLS_EXPLAIN'					=> 'Entfernt alle Links zu externen Domains aus den Zusammenfassungen. Manche E-Mail-Systeme stufen E-Mails mit Links zu anderen Domains als spamverdächtig ein. Dadurch können die E-Mail-Zusammenfassungen im Spamverdachtsordner landen oder vom Postausgangsserver gar nicht erst gesendet werden.',
 	'DIGESTS_UNSUBSCRIBE'									=> 'Abonnement beenden',
 	'DIGESTS_UNSUBSCRIBE_SUBJECT'							=> 'Du erhältst ab jetzt keine E-Mail-Zusammenstellungen mehr',
 	'DIGESTS_UNSUBSCRIBED'									=> 'Noch nie abonniert',
